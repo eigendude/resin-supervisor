@@ -25,7 +25,7 @@ ARCH = rpi# rpi/amd64/i386/armv7hf/armel
 DEPLOY_REGISTRY =
 
 SUPERVISOR_VERSION = master
-ESCAPED_BASE_IMAGE_TAG = resin\/$(ARCH)-supervisor-base:$(SUPERVISOR_VERSION)
+ESCAPED_BASE_IMAGE_TAG = resin\/$(ARCH)-supervisor-base:latest
 
 DOCKER_VERSION:=$(shell docker version --format '{{.Server.Version}}')
 DOCKER_MAJOR_VERSION:=$(word 1, $(subst ., ,$(DOCKER_VERSION)))
