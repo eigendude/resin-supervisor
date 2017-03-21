@@ -205,6 +205,7 @@ test-gosuper: gosuper
 		--rm \
 		-v /var/run/dbus:/mnt/root/run/dbus \
 		-e DBUS_SYSTEM_BUS_ADDRESS="unix:path=/mnt/root/run/dbus/system_bus_socket" \
+		--privileged \
 		resin/go-supervisor-$(ARCH):$(SUPERVISOR_VERSION) bash -c \
 			'./test_formatting.sh && go test -v ./gosuper'
 
