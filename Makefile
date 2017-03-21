@@ -240,6 +240,7 @@ format-rustsuper: rustsuper
 		-v $(shell pwd)/rustsuper:/rustsuper \
 		resin/rust-supervisor-$(ARCH):$(SUPERVISOR_VERSION) bash -c \
 			'./do_formatting.sh'
+	sudo chown -R ${USER}:${USER} rustsuper
 
 test-integration: rustsuper
 	docker run \
